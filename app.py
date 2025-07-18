@@ -74,13 +74,13 @@ if uploaded_file:
                     # if not generated_sql.strip().lower().startswith("select"):
                     #     raise ValueError("Ambiguous or invalid question. SQL generation failed.")
 
-                    st.code(generated_sql, language="sql")
+                    # st.code(generated_sql, language="sql")
 
                     # cleaned_sql=generated_sql.strip().replace("```sql","").replace("```","").replace('"""','').replace("'''","")
 
                     cleaned_sql = re.sub(r"```sql|```|'''|\"\"\"","",generated_sql,flags=re.IGNORECASE).strip()
 
-                    st.code(cleaned_sql, language="sql")
+                    # st.code(cleaned_sql, language="sql")
 
                     result = con.execute(cleaned_sql).fetchdf()
 
